@@ -12,12 +12,20 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <!-- alpinejs -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    @livewireStyles
+
 </head>
 <body>
     <div id="app">
@@ -76,8 +84,29 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            <div class="container">
+                @include('partial.flash')
+
+                 @yield('content')
+{{--                {{ $slot }}--}}
+
+            </div>
         </main>
     </div>
+
+
+
+
+{{--<script>--}}
+{{--    $(function (){--}}
+{{--       $('#alert-session').fadeTo(5000,500).slideUp(500,function () {--}}
+{{--           $(this).slideUp(500);--}}
+{{--       });--}}
+{{--    });--}}
+{{--</script>--}}
+
+    @livewireScripts
+
+    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
 </body>
 </html>

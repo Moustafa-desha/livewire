@@ -1,6 +1,8 @@
 <?php
 
 
+use App\Http\Controllers\PostsController;
+use App\Http\Livewire\Posts;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +24,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/posts', PostsController::class);
+
+Route::get('livewire/posts',Posts::class);
+Route::get('livewire/create/post',\App\Http\Livewire\CreatePost::class);
+Route::get('livewire/edit/post/{id}',\App\Http\Livewire\EditPost::class);
+Route::get('livewire/show/post/{id}',\App\Http\Livewire\ShowPost::class);
+

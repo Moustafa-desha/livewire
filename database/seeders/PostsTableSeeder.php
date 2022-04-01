@@ -26,7 +26,7 @@ class PostsTableSeeder extends Seeder
                 'category_id' => Category::inRandomOrder()->first()->id,
                 'title' => $faker->sentence(5),
                 'body' => $faker->paragraph(),
-                'image' => "$i.png",
+                'image' => sprintf("%1d",$i).".png",
             ]);
 
           }
